@@ -6,7 +6,7 @@
 /*   By: yerbs <yerbs@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:33:37 by yerbs             #+#    #+#             */
-/*   Updated: 2023/10/20 13:51:56 by yerbs            ###   ########.fr       */
+/*   Updated: 2023/10/20 17:07:22 by yerbs            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,4 @@ int ft_atoi(const char *str)
     }
     return (resultat *  signe);
 }
-#include <stdio.h>
-int main ()
-{
-    printf("%d\n", ft_atoi("-1234"));
-}
+

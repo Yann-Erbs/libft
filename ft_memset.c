@@ -6,7 +6,7 @@
 /*   By: yerbs <yerbs@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 11:12:22 by yerbs             #+#    #+#             */
-/*   Updated: 2023/10/17 11:52:37 by yerbs            ###   ########.fr       */
+/*   Updated: 2023/10/20 16:47:27 by yerbs            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
+	unsigned char *e;
+	e = (unsigned char *)s;
 	while (n)
 	{
-		(char *)s[n] = c;
+		e[n] = c;
 		n--;
 	}
+	return (e);
 }

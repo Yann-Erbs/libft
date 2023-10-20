@@ -5,12 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yerbs <yerbs@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 13:10:48 by yerbs             #+#    #+#             */
-/*   Updated: 2023/10/20 13:19:51 by yerbs            ###   ########.fr       */
+/*   Created: 2023/10/20 16:34:47 by yerbs             #+#    #+#             */
+/*   Updated: 2023/10/20 16:37:19 by yerbs            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_memcmp(const void s1, const void s2, size_t n)
+#include "libft.h"
+
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
     unsigned const char		*t1;
 	unsigned const char		*t2;

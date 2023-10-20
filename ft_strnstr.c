@@ -6,7 +6,7 @@
 /*   By: yerbs <yerbs@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:24:18 by yerbs             #+#    #+#             */
-/*   Updated: 2023/10/20 13:28:55 by yerbs            ###   ########.fr       */
+/*   Updated: 2023/10/20 17:05:20 by yerbs            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ char    *ft_strnstr(const char *big, const char *little, size_t len)
             return ((char *) &big[i]);
         i++;
     }
-    return (NULL)
+    return (NULL);
 }
