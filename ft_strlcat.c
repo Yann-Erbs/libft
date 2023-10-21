@@ -6,7 +6,7 @@
 /*   By: yerbs <yerbs@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 12:05:46 by yerbs             #+#    #+#             */
-/*   Updated: 2023/10/20 16:57:33 by yerbs            ###   ########.fr       */
+/*   Updated: 2023/10/20 17:37:10 by yerbs            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
     
     len_src = ft_strlen(src);
     len_dst = ft_strlen(dst);
-    if (!size)
-        return (len_src + len_dst);
-    if (len_src <  len_dst - size)
+    if (len_dst >= size)
+        return (len_src + size);
+    if (len_src <  size - len_dst)
         ft_strlcpy(dst + len_dst, src, len_src + 1);
     else
-        ft_strlcpy(dst + len_dst, src, size - len_dst - 1);
-    return (len_dst + len_dst);
+        ft_strlcpy(dst + len_dst, src, size - len_dst);
+    return (len_src + len_dst);
 }
 
 

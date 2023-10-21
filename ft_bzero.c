@@ -6,13 +6,13 @@
 /*   By: yerbs <yerbs@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 11:50:56 by yerbs             #+#    #+#             */
-/*   Updated: 2023/10/20 16:36:34 by yerbs            ###   ########.fr       */
+/*   Updated: 2023/10/20 17:25:53 by yerbs            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
 }

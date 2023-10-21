@@ -6,7 +6,7 @@
 /*   By: yerbs <yerbs@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:31:29 by yerbs             #+#    #+#             */
-/*   Updated: 2023/10/20 13:14:16 by yerbs            ###   ########.fr       */
+/*   Updated: 2023/10/20 18:16:57 by yerbs            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ char    *ft_strchr(const char *s, int c)
     int i;
     
     i = 0;
-    while (s[i])
+    while (s[i] != c)
     {
-        if (s[i] == c)
-            return ((char *) &s[i]);
+        if (s[i] == '\0')
+            return (NULL);
         i++;
     }
-    return (NULL);
+    return ((char *) &s[i]);
 }
