@@ -6,7 +6,7 @@
 /*   By: yerbs <yerbs@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:51:23 by yerbs             #+#    #+#             */
-/*   Updated: 2023/10/18 11:55:12 by yerbs            ###   ########.fr       */
+/*   Updated: 2023/10/23 12:43:00 by yerbs            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if (!src || !dest)
+	if (!src && !dest)
 		return (NULL);
 	if (dest > src)
 		while (n--)

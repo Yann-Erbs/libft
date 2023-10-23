@@ -6,7 +6,7 @@
 /*   By: yerbs <yerbs@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:56:30 by yerbs             #+#    #+#             */
-/*   Updated: 2023/10/21 10:40:45 by yerbs            ###   ########.fr       */
+/*   Updated: 2023/10/23 12:47:23 by yerbs            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	i = 0;
 	string = (void *)s;
-	if (s == NULL)
-		return (NULL);
 	while (i < n)
 	{
 		if (string[i] == (char)c)
