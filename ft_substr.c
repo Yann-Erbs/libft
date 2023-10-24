@@ -17,7 +17,7 @@ char *ft_substr(char const *s, unsigned int start,size_t len)
 	char	*s2;
 	int	compteur;
 
-	s2 = ft_calloc(len + 1, sizeof(char *));
+	s2 = malloc(sizeof(char) * (len + 1));
 	if (!s2)
 		return (NULL);
 	compteur = 0;
@@ -29,4 +29,3 @@ char *ft_substr(char const *s, unsigned int start,size_t len)
 	}
 	return (s2);
 }
-
