@@ -6,7 +6,7 @@
 /*   By: yerbs <yerbs@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 10:30:22 by yerbs             #+#    #+#             */
-/*   Updated: 2023/10/23 13:28:51 by yerbs            ###   ########.fr       */
+/*   Updated: 2023/10/24 07:44:04 by yerbs            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
+<<<<<<< HEAD
 char	*ft_substr(char const *, unsigned int start, size_t len);
+=======
+char 	*ft_substr(char const *s, unsigned int start,size_t len);
+>>>>>>> 0454cfc8e2e833f96ebde2200a63c3e7ac885d31
 
 #endif
