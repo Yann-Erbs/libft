@@ -6,7 +6,7 @@
 /*   By: yerbs <yerbs@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 10:30:22 by yerbs             #+#    #+#             */
-/*   Updated: 2023/10/25 10:57:36 by yerbs            ###   ########.fr       */
+/*   Updated: 2023/10/25 13:22:43 by yerbs            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ void ft_striteri(char *s, void (*f)(unsigned int, char*));
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char *ft_itoa(int n);
 char **ft_split(char const *s, char c);
+char *ft_strrchr(const char *s, int c);
 
 #endif
