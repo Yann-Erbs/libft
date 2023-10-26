@@ -6,56 +6,48 @@
 /*   By: yerbs <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:57:50 by yerbs             #+#    #+#             */
-/*   Updated: 2023/10/26 07:54:27 by yerbs            ###   ########.fr       */
+/*   Updated: 2023/10/26 13:46:46 by yerbs            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	compter_les_mots(char const *s, char c)
+static int	ft_cntwords(char const *s, char c)
 {
 	int	i;
-	int	compteur;
+	int	cpt;
 
-	compteur = 0;
+	cpt = 0;
 	i = 0;
 	while (s[i])
 	{
 		while (s[i] && s[i] == c)
 			i++;
 		if (s[i])
-			compteur++;
+			cpt++;
 		while (s[i] && s[i] != c)
 			i++;
 	}
-	return (compteur);
+	return (cpt);
 }
 
-void	free_chaine(char **chaine_finale)
+static int	ft_wordscpy(char const *str, char **final_str, size_t l, int i)
 {
-	int	i;
-
-	i = 0;
-	while (chaine_finale[i])
-		free(chaine_finale[i++]);
-	free(chaine_finale);
-}
-
-int	copier_les_mots(char const *chaine, char **chaine_finale, int longueur)
-{
-	char	**debut_chaine;
-
-	debut_chaine = chaine_finale;
-	*chaine_finale = ft_substr(chaine, 0, longueur);
-	if (!*chaine_finale)
+	final_str[i] = ft_substr(str, 0, l);
+	if (!final_str[i])
 	{
-		free_chaine(debut_chaine);
+		while (i > 0)
+		{
+			i--;
+			free(final_str[i]);
+		}
+		free(final_str);
 		return (0);
 	}
 	return (1);
 }
 
-char	**separer_les_mots(char const *chaine, char separateur)
+static char	**ft_splitwords(char const *str, char sep)
 {
 	char	**result;
 	int		i;
@@ -64,22 +56,19 @@ char	**separer_les_mots(char const *chaine, char separateur)
 
 	i = 0;
 	k = 0;
-	j = compter_les_mots(chaine, separateur);
+	j = ft_cntwords(str, sep);
 	result = ft_calloc(j + 1, sizeof(char *));
 	if (!result)
 		return (NULL);
-	while (chaine[i])
+	while (str[i] && k < ft_cntwords(str, sep))
 	{
-		while (chaine[i] && chaine[i] == separateur)
+		while (str[i] && str[i] == sep)
 			i++;
 		j = i;
-		while (chaine[i] && chaine[i] != separateur)
+		while (str[i] && str[i] != sep)
 			i++;
-		if (i != j && !copier_les_mots(chaine + j, &result[k++], (i - j)))
-		{
-			free_chaine(result);
+		if (i != j && !ft_wordscpy((char *)str + j, result, i - j, k++))
 			return (NULL);
-		}
 	}
 	return (result);
 }
@@ -88,5 +77,5 @@ char	**ft_split(char const *s, char c)
 {
 	if (!s)
 		return (NULL);
-	return (separer_les_mots((char *)s, c));
+	return (ft_splitwords((char *)s, c));
 }

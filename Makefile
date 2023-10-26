@@ -9,7 +9,6 @@ SRCS = 	ft_atoi.c \
 		ft_isdigit.c \
 		ft_isprint.c \
 		ft_itoa.c \
-		ft_lstnew_bonus.c \
 		ft_memchr.c \
 		ft_memcmp.c \
 		ft_memcpy.c \
@@ -35,6 +34,9 @@ SRCS = 	ft_atoi.c \
 		ft_substr.c \
 		ft_tolower.c \
 		ft_toupper.c
+
+BONUS = ft_lstnew_bonus.c \
+		ft_lstadd_font.c \
 		
 OBJS = $(SRCS:.c=.o)
 
@@ -57,5 +59,9 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean $(NAME)
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 .PHONY: all clean fclean re
