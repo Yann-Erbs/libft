@@ -6,7 +6,7 @@
 /*   By: yerbs <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:53:54 by yerbs             #+#    #+#             */
-/*   Updated: 2023/10/27 08:08:28 by yerbs            ###   ########.fr       */
+/*   Updated: 2023/10/27 12:21:21 by yerbs            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*s;
+	size_t	len;
 
-	if (!nmemb || !size)
-		return (malloc(0));
+	len = nmemb * size;
+	if (size && len / size != nmemb)
+		return (NULL);
 	s = malloc(nmemb * size);
 	if (!s)
 		return (NULL);
