@@ -1,4 +1,9 @@
-NAME = libft.a
+# __    __     ______     __  __     ______     ______   __     __         ______    
+#/\ "-./  \   /\  __ \   /\ \/ /    /\  ___\   /\  ___\ /\ \   /\ \       /\  ___\   
+#\ \ \-./\ \  \ \  __ \  \ \  _"-.  \ \  __\   \ \  __\ \ \ \  \ \ \____  \ \  __\   
+# \ \_\ \ \_\  \ \_\ \_\  \ \_\ \_\  \ \_____\  \ \_\    \ \_\  \ \_____\  \ \_____\ 
+#  \/_/  \/_/   \/_/\/_/   \/_/\/_/   \/_____/   \/_/     \/_/   \/_____/   \/_____/ 
+                                                                                    
 
 SRCS = 	ft_atoi.c \
 		ft_bzero.c \
@@ -35,11 +40,26 @@ SRCS = 	ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c \
 
+#  _______       ______       ___   __       __  __       ______      
+#/_______/\     /_____/\     /__/\ /__/\    /_/\/_/\     /_____/\     
+#\::: _  \ \    \:::_ \ \    \::\_\\  \ \   \:\ \:\ \    \::::_\/_    
+# \::(_)  \/_    \:\ \ \ \    \:. `-\  \ \   \:\ \:\ \    \:\/___/\   
+#  \::  _  \ \    \:\ \ \ \    \:. _    \ \   \:\ \:\ \    \_::._\:\  
+#   \::(_)  \ \    \:\_\ \ \    \. \`-\  \ \   \:\_\:\ \     /____\:\ 
+#    \_______\/     \_____\/     \__\/ \__\/    \_____\/     \_____\/ 
+
 BONUS = ft_lstnew_bonus.c \
 		ft_lstadd_front_bonus.c \
 		ft_lstsize_bonus.c \
-		ft_lstlast_bonus.c
-		
+		ft_lstlast_bonus.c \
+		ft_lstadd_back_bonus.c \
+		ft_lstdelone_bonus.c \
+		ft_lstclear_bonus.c \
+		ft_lstiter_bonus.c \
+		ft_lstmap_bonus.c
+
+
+
 OBJS = $(SRCS:.c=.o)
 
 OBJSB = $(BONUS:.c=.o)
@@ -70,7 +90,7 @@ bonus : ${OBJSB}
 	${AR} ${NAME} ${OBJSB}
 
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(OBJSB)
 
 .PHONY: all clean fclean re bonus

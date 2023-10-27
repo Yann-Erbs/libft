@@ -6,9 +6,18 @@
 /*   By: yerbs <yerbs@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 10:30:22 by yerbs             #+#    #+#             */
-/*   Updated: 2023/10/27 09:04:20 by yerbs            ###   ########.fr       */
+/*   Updated: 2023/10/27 10:54:12 by yerbs            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*
+  _           ________       _______       ______     _________  
+/_/\         /_______/\    /_______/\     /_____/\   /________/\ 
+\:\ \        \__.::._\/    \::: _  \ \    \::::_\/_  \__.::.__\/ 
+ \:\ \          \::\ \      \::(_)  \/_    \:\/___/\    \::\ \   
+  \:\ \____     _\::\ \__    \::  _  \ \    \:::._\/     \::\ \  
+   \:\/___/\   /__\::\__/\    \::(_)  \ \    \:\ \        \::\ \ 
+    \_____\/   \________\/     \_______\/     \_\/         \__\/ 
+*/
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -62,9 +71,26 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 
-t_list	*ft_lstnew(void *content);
-void 	ft_lstadd_front(t_list **lst, t_list *new);
+/*
+  _______       ______       ___   __       __  __       ______      
+/_______/\     /_____/\     /__/\ /__/\    /_/\/_/\     /_____/\     
+\::: _  \ \    \:::_ \ \    \::\_\\  \ \   \:\ \:\ \    \::::_\/_    
+ \::(_)  \/_    \:\ \ \ \    \:. `-\  \ \   \:\ \:\ \    \:\/___/\   
+  \::  _  \ \    \:\ \ \ \    \:. _    \ \   \:\ \:\ \    \_::._\:\  
+   \::(_)  \ \    \:\_\ \ \    \. \`-\  \ \   \:\_\:\ \     /____\:\ 
+    \_______\/     \_____\/     \__\/ \__\/    \_____\/     \_____\/ 
+*/
+
 int		ft_lstsize(t_list *lst);
-t_list *ft_lstlast(t_list *lst);
+
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstclear(t_list **lst, void (*del)(void*));
+void	ft_lstdelone(t_list *lst, void (*del)(void*));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+
+t_list	*ft_lstnew(void *content);
+t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
