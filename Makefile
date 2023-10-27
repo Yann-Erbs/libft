@@ -33,35 +33,44 @@ SRCS = 	ft_atoi.c \
 		ft_strtrim.c \
 		ft_substr.c \
 		ft_tolower.c \
-		ft_toupper.c
+		ft_toupper.c \
 
 BONUS = ft_lstnew_bonus.c \
-		ft_lstadd_font.c \
+		ft_lstadd_front_bonus.c \
+		ft_lstsize_bonus.c \
+		ft_lstlast_bonus.c
 		
 OBJS = $(SRCS:.c=.o)
+
+OBJSB = $(BONUS:.c=.o)
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -c -I./
 RM = rm -f
+AR = ar rcs
+NAME = libft.a
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -rc $(NAME) $(OBJS)
+	${AR} $(NAME) $(OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) $< -o $@
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) ${OBJSB}
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean $(NAME)
 
+bonus : ${OBJSB}
+	${AR} ${NAME} ${OBJSB}
+
 so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
 	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
