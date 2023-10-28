@@ -101,8 +101,4 @@ re: fclean $(NAME)
 bonus : ${OBJSB}
 	${AR} ${NAME} ${OBJSB}
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(OBJSB)
-
 .PHONY: all clean fclean re bonus
