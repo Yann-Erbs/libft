@@ -6,11 +6,11 @@
 /*   By: yerbs <yerbs@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:31:29 by yerbs             #+#    #+#             */
-/*   Updated: 2023/10/23 12:33:55 by yerbs            ###   ########.fr       */
+/*   Updated: 2023/10/30 11:16:15 by yerbs            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
